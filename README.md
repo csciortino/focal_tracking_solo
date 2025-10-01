@@ -37,10 +37,10 @@ focal_tracking/
 
 ```bash
 # Make a virtual env (currently using 3.11 for requirements compatibility)
-python3.11 -m venv ~/.venv/focal
+python3.11 -m venv ~/.venv/focal3.11
 
 # Start the environment
-source ~/.venv/focal/bin/activate
+source ~/.venv/focal3.11/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -55,16 +55,16 @@ Place your camera trap videos in the `data/raw/` directory. The system supports 
 Start the notebook server this way:
 ```
 # activate the virtual environment
-source ~/.venv/focal/bin/activate
+source ~/.venv/focal3.11/bin/activate
 
-# install the ipykernel package so that the notebook can run this virtual environment
-pip install notebook ipykernel
+# add this virtual environment to the available kernels in jupyter
+python -m ipykernel install --user --name=focal3.11 --display-name "Python 3.11 (focal tracking)"
 
 # start the notebook server
 jupyter notebook
 ```
 In the notebook interface:
-• When opening or creating a notebook, select `Kernel` > `Change Kernel` > `Python (focal)` to use the correct environment.
+• When opening or creating a notebook, select `Kernel` > `Change Kernel` > `Python 3.11 (focal tracking)` to use the correct environment.
 
 
 Execute the Jupyter notebooks in sequence:
