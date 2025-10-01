@@ -1,2 +1,7 @@
 data/
 .DS_Store
+focal/
+#~
+.#~
+~#.ipynb_checkpoints/
+__pycache__/

@@ -2,7 +2,6 @@ import cv2
 import torch
 from ultralytics import YOLO
 import numpy as np
-from typing import List, Tuple, Dict, Any
 
 
 class MacaqueDetector:
@@ -10,7 +9,7 @@ class MacaqueDetector:
         self.model = YOLO(model_path)
         self.confidence = confidence
         
-    def detect_primates(self, frame: np.ndarray) -> List[Dict[str, Any]]:
+    def detect_primates(self, frame: np.ndarray) -> list[dict[str, any]]:
         results = self.model(frame, conf=self.confidence)
         
         detections = []
@@ -32,7 +31,7 @@ class MacaqueDetector:
         
         return detections
     
-    def extract_features(self, frame: np.ndarray, bbox: List[int]) -> np.ndarray:
+    def extract_features(self, frame: np.ndarray, bbox: list[int]) -> np.ndarray:
         x1, y1, x2, y2 = bbox
         cropped = frame[y1:y2, x1:x2]
         

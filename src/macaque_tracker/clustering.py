@@ -6,7 +6,6 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 import umap
 import hdbscan
-from typing import Dict, List, Tuple, Any
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -34,7 +33,7 @@ class IndividualIdentifier:
                 min_samples=kwargs.get('min_samples', 3)
             )
     
-    def fit_predict(self, tracklet_features: Dict[int, np.ndarray]) -> Dict[int, int]:
+    def fit_predict(self, tracklet_features: dict[int, np.ndarray]) -> dict[int, int]:
         # Filter out empty features
         valid_tracklets = {tid: feat for tid, feat in tracklet_features.items() 
                           if len(feat) > 0}
@@ -150,7 +149,7 @@ class IndividualIdentifier:
         
         return summary_stats
     
-    def merge_similar_clusters(self, similarity_threshold: float = 0.8) -> Dict[int, int]:
+    def merge_similar_clusters(self, similarity_threshold: float = 0.8) -> dict[int, int]:
         if self.features_ is None or self.labels_ is None:
             return {}
             

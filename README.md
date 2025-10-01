@@ -19,7 +19,7 @@ focal_tracking/
 ├── data/raw/                    # Camera trap videos
 ├── src/macaque_tracker/         # Core tracking modules
 │   ├── detector.py             # YOLO-based detection
-│   ├── tracker.py              # Simple tracking algorithm  
+│   ├── tracker.py              # Simple tracking algorithm
 │   ├── clustering.py           # Individual identification
 │   └── video_utils.py          # Video processing utilities
 ├── notebooks/                   # Analysis workflows
@@ -36,11 +36,14 @@ focal_tracking/
 ### 1. Installation
 
 ```bash
+# Make a virtual env (currently using 3.11 for requirements compatibility)
+python3.11 -m venv ~/.venv/focal
+
+# Start the environment
+source ~/.venv/focal/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
-
-# Or install as package
-pip install -e .
 ```
 
 ### 2. Add Video Data
@@ -48,6 +51,21 @@ pip install -e .
 Place your camera trap videos in the `data/raw/` directory. The system supports common video formats (MP4, AVI, MOV).
 
 ### 3. Run Analysis Pipeline
+
+Start the notebook server this way:
+```
+# activate the virtual environment
+source ~/.venv/focal/bin/activate
+
+# install the ipykernel package so that the notebook can run this virtual environment
+pip install notebook ipykernel
+
+# start the notebook server
+jupyter notebook
+```
+In the notebook interface:
+• When opening or creating a notebook, select `Kernel` > `Change Kernel` > `Python (focal)` to use the correct environment.
+
 
 Execute the Jupyter notebooks in sequence:
 

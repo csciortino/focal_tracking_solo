@@ -1,5 +1,4 @@
 import numpy as np
-from typing import List, Dict, Any, Tuple
 from collections import defaultdict
 import cv2
 
@@ -12,7 +11,7 @@ class SimpleTracker:
         self.max_disappeared = max_disappeared
         self.max_distance = max_distance
         
-    def register(self, detection: Dict[str, Any]) -> int:
+    def register(self, detection: dict[str, any]) -> int:
         self.objects[self.next_id] = {
             'centroid': detection['center'],
             'bbox': detection['bbox'],
@@ -27,7 +26,7 @@ class SimpleTracker:
         del self.objects[object_id]
         del self.disappeared[object_id]
         
-    def update(self, detections: List[Dict[str, Any]]) -> Dict[int, Dict[str, Any]]:
+    def update(self, detections: list[dict[str, any]]) -> dict[int, dict[str, any]]:
         if len(detections) == 0:
             for object_id in list(self.disappeared.keys()):
                 self.disappeared[object_id] += 1
@@ -95,7 +94,7 @@ class TrackletManager:
     def __init__(self):
         self.tracklets = defaultdict(list)
         
-    def add_detection(self, track_id: int, frame_num: int, detection: Dict[str, Any]):
+    def add_detection(self, track_id: int, frame_num: int, detection: dict[str, any]):
         self.tracklets[track_id].append({
             'frame': frame_num,
             'bbox': detection['bbox'],
@@ -117,6 +116,6 @@ class TrackletManager:
             
         return np.mean(features, axis=0)
         
-    def get_all_tracklet_features(self) -> Dict[int, np.ndarray]:
+    def get_all_tracklet_features(self) -> dict[int, np.ndarray]:
         return {track_id: self.get_tracklet_features(track_id) 
                 for track_id in self.tracklets.keys()}

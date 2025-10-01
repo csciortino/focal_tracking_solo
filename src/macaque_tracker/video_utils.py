@@ -1,8 +1,9 @@
 import cv2
 import numpy as np
 import os
-from typing import List, Tuple, Dict, Any, Generator
-from moviepy.editor import VideoFileClip, concatenate_videoclips
+from collections.abc import Generator
+import moviepy
+from moviepy import VideoFileClip, concatenate_videoclips
 import pandas as pd
 from pathlib import Path
 
@@ -21,12 +22,12 @@ class VideoProcessor:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.cap.release()
         
-    def read_frame(self, frame_number: int = None) -> Tuple[bool, np.ndarray]:
+    def read_frame(self, frame_number: int = None) -> tuple[bool, np.ndarray]:
         if frame_number is not None:
             self.cap.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
         return self.cap.read()
     
-    def frame_generator(self, start_frame: int = 0, end_frame: int = None) -> Generator[Tuple[int, np.ndarray], None, None]:
+    def frame_generator(self, start_frame: int = 0, end_frame: int = None) -> Generator[tuple[int, np.ndarray], None, None]:
         if end_frame is None:
             end_frame = self.frame_count
             
@@ -39,7 +40,7 @@ class VideoProcessor:
             yield frame_num, frame
             
     def extract_frames_around_detections(self, detections_df: pd.DataFrame, 
-                                       buffer_seconds: float = 2.0) -> Dict[int, List[Tuple[int, int]]]:
+                                       buffer_seconds: float = 2.0) -> dict[int, list[tuple[int, int]]]:
         buffer_frames = int(buffer_seconds * self.fps)
         
         # Group by track_id and get frame ranges
@@ -88,8 +89,8 @@ class VideoClipExtractor:
         
     def extract_clips_by_individual(self, video_path: str, 
                                    detections_df: pd.DataFrame,
-                                   individual_mapping: Dict[int, int],
-                                   buffer_seconds: float = 2.0) -> Dict[int, List[str]]:
+                                   individual_mapping: dict[int, int],
+                                   buffer_seconds: float = 2.0) -> dict[int, list[str]]:
         
         # Add individual IDs to detections
         detections_df = detections_df.copy()
@@ -137,7 +138,7 @@ class VideoClipExtractor:
                 
         return clips_by_individual
     
-    def create_summary_video(self, clips_by_individual: Dict[int, List[str]], 
+    def create_summary_video(self, clips_by_individual: dict[int, list[str]], 
                             output_path: str = None) -> str:
         if output_path is None:
             output_path = str(self.output_dir / "individual_summary.mp4")
@@ -173,7 +174,7 @@ class VideoClipExtractor:
             return None
 
 
-def find_video_files(directory: str) -> List[str]:
+def find_video_files(directory: str) -> list[str]:
     video_extensions = ['.mp4', '.avi', '.mov', '.mkv', '.wmv', '.flv']
     video_files = []
     
@@ -185,7 +186,7 @@ def find_video_files(directory: str) -> List[str]:
     return sorted(video_files)
 
 
-def process_videos_in_directory(directory: str, output_dir: str = "output") -> List[str]:
+def process_videos_in_directory(directory: str, output_dir: str = "output") -> list[str]:
     video_files = find_video_files(directory)
     processed_files = []
     
