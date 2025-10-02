@@ -3,5 +3,8 @@ data/
 focal/
 #~
 .#~
-~#.ipynb_checkpoints/
+~#
+.ipynb_checkpoints/
 __pycache__/
+*.pt
+output/
