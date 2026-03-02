@@ -200,8 +200,8 @@ If you use this system in your research, please cite:
 
 ```
 Macaque Individual Tracking System
-Camera trap video analysis for primate behavioral ecology
-[Your Institution/Research Group]
+4k video analysis for primate behavioral ecology
+Sciortino, C., Patterson, G., Turner, S., 2026
 ```
 
 ## Support
