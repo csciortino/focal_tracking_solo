@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond the Blink of an Eye</title>
+    <meta
+      name="description"
+      content="AI-assisted documentation of fleeting play behaviours and inter-individual interactions in free-ranging juvenile Japanese macaques on Awaji Island."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="#">
+          Beyond the Blink <span class="badge">In progress • 2026</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#fieldsite">Field site</a>
+          <a href="#how">How it works</a>
+          <a href="#results">Progress</a>
+	  <a href="#aws">AWS</a>
+          <a href="#links">Links</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1 class="gradient-title">Beyond the Blink of an Eye</h1>
+            <p class="subtitle">
+              How can AI help document fleeting play behaviours and inter-individual interactions in free-ranging,
+              juvenile Japanese macaques on Awaji Island?
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#" target="_blank" rel="noreferrer">Demo coming soon</a>
+              <a class="btn" href="https://github.com/genp/focal_tracking" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="https://orcid.org/0009-0008-9139-5509" target="_blank" rel="noreferrer">Preprint</a>
+            </div>
+
+            <div class="kpis">
+              <div class="kpi"><strong>Modalities</strong> · Vision + Text</div>
+              <div class="kpi"><strong>Core tool</strong> · SAM3 segmentation</div>
+              <div class="kpi"><strong>Setting</strong> · Free-ranging macaques</div>
+              <div class="kpi"><strong>Outputs</strong> · Tracklets + interactions</div>
+            </div>
+
+            <p class="caption" style="margin-top:12px;">
+              Field site: Awajishima Monkey Center • Collaboration: Concordia + Osaka University •
+              Methods: SAM3 + tracking + structured annotation
+            </p>
+          </div>
+
+          <div class="card hero-teaser">
+            <img src="assets/teaser.png" alt="Macaque play behaviour AI pipeline teaser" />
+            
+	<p class="caption">
+  Concept image derived from a photo by Megan Joyce, Awajishima Monkey Center (AMC), 2019.
+  <br><br>
+  Social behaviour is an early and underused indicator of ecological resilience, and AI-enabled monitoring makes it measurable at the scale required for conservation decision-making.
+  <br>
+  <a class="btn btn-webcam"
+     href="https://www.webcamtaxi.com/en/japan/hyogo-prefecture/awaji-monkey-center.html"
+     target="_blank"
+     rel="noopener noreferrer">
+    ▶ Live webcam (AMC)
+  </a>
+</p>
+
+          </div>
+        </div>
+      </section>
+
+<section id="partners" class="section">
+  <div class="container">
+    <h2>Affiliations</h2>
+
+    <!-- Partner logos (larger grid) -->
+<div class="logo-grid logo-grid--partners">
+  <a class="logo-card" href="https://www.concordia.ca/artsci/geography-planning-environment/research/pies.html" target="_blank" rel="noreferrer">
+    <img class="logo-img" src="assets/pies-logo.png" alt="PIES Lab logo" />
+    <div class="logo-name">PIES Lab</div>
+  </a>
+
+  <a class="logo-card" href="https://monkey-center.jp/english.php" target="_blank" rel="noreferrer">
+    <img class="logo-img" src="assets/amc-logo.png" alt="Awajishima Monkey Center logo" />
+    <div class="logo-name">Awajishima Monkey Center</div>
+  </a>
+
+  <a class="logo-card" href="https://www.concordia.ca" target="_blank" rel="noreferrer">
+    <img class="logo-img" src="assets/concordia-university-logo.png" alt="Concordia University logo" />
+    <div class="logo-name">Concordia University</div>
+  </a>
+
+  <a class="logo-card" href="https://www.osaka-u.ac.jp/en" target="_blank" rel="noreferrer">
+    <img class="logo-img" src="assets/osaka-university-logo.png" alt="Osaka University logo" />
+    <div class="logo-name">Osaka University</div>
+  </a>
+</div>
+
+<section id="fieldsite" class="section">
+  <div class="container">
+    <h2>Field site</h2>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div class="feature">
+        <h3>2.1.a Study area</h3>
+        <p>
+          The study is conducted at the Awajishima Monkey Center (AMC) near Sumoto City on Awaji Island (Hyōgo Prefecture), Japan—a coastal, forested hillside site overlooking Osaka Bay. AMC is a privately operated tourism and education facility hosting a single large group of approximately 400 free-ranging Japanese
+          macaques </i>(Macaca fuscata)</i>.
+        </p>
+        <p>
+          The group is routinely provisioned (typically twice daily) with foods such as wheat, soybeans,
+          peanuts, fruit, and sweet potatoes, and visitors can offer food from within a designated enclosure. Reliance on
+          provisioning varies seasonally, with reduced visits during periods when wild foods are abundant. Because food is provisioned and easier to access, individuals can spend less time foraging and more time available for social behaviours like play, grooming, and maintaining relationships.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>2.1.b Study population</h3>
+        <p>
+          The AMC macaques provide an unusual opportunity to examine how physical disability shapes early social life under naturalistic social conditions. Congenital limb malformations (CLM) have been documented in this population for decades, with prevalence estimates reaching ~17% in this free-ranging group. Provisioning likely reduces foraging time and energetic costs, which can increase the time available for social behaviours.
+        </p>
+        <p>
+          Prior work suggests that many affected individuals develop compensatory strategies to maintain access to resources and social partners. A key open question is whether these compensations fully mitigate the social costs of impairment during development, especially in fast-moving, contact-dependent interactions such as play and other tactile exchanges. 
+        </p>
+      </div>
+    </div>
+
+    <!-- Figure 1 -->
+    <div class="card" style="margin-top:16px;">
+      <img class="figure figure--sm" src="assets/amc-fieldsite-figure1.png" alt="Figure 1. Awajishima Monkey Center (AMC) field site and broader study context." />
+        
+      <p class="caption">
+        <strong>Figure 1.</strong> Awajishima Monkey Center (AMC) field site owned by the Nobuhara family and broader study
+        context. (A) QGIS map showing the AMC study area boundary (polygon) in street-map view. The site maintains a 24/7 webcam livestream of the main provisioning area; the camera icon indicates the approximate location and field of view
+(<a href="https://www.webcamtaxi.com/en/japan/hyogo-prefecture/awaji-monkey-center.html" target="_blank" rel="noopener noreferrer">live webcam stream</a>).
+ (B) Regional context map of
+        Awaji Island in ESRI satellite imagery showing the location of AMC. (C) Photograph from the AMC provisioning area
+        showing a well-known arrangement of provisioned food forming the word “monkey” in Japanese, captured by Megan Marie
+        Joyce. (D) Photograph of the provisioning/feeding grounds (primary observation area). Maps were designed in QGIS by CS using OpenStreetMap and ESRI satellite imagery; the mapped AMC study area
+        covers 18,262 m².
+      </p>
+    </div>
+
+
+    <!-- Figure 2 -->
+    <div class="card" style="margin-top:12px;">
+      <img class="figure figure--xs" src="assets/amc-fieldsite-figure2.png" alt="Figure 2. Locator map showing the study area from national to local context." />
+
+      <p class="caption">
+        <strong>Figure 2.</strong> Relative locator map of the study area. Nested panels show the position of Awajishima
+        Monkey Center near Sumoto City on Awaji Island, Hyōgo Prefecture, Japan—progressing from national context (Japan; A)
+        to the Kansai region (B) and finally to Awaji Island and the Monkey Center itself (C). Base map from Google Maps,
+        assembled in Canva by CS.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>What this project does</h2>
+
+          <div class="grid-3">
+  <div class="feature">
+    <h3>Field-first behavioural data</h3>
+    <p>
+      Over a 6-week field season at the Awajishima Monkey Center, I collect continuous focal-follow 4K video of juvenile macaques to quantify activity budgets,
+      play behaviours, play partners, and initiation/response sequences in disabled and non-disabled juveniles.
+    </p>
+  </div>
+
+  <div class="feature">
+    <h3>AI-assisted extraction at scale</h3>
+    <p>
+      From recordings, I extract key frames and short clips, build per-individual photo catalogues, and apply structured behaviour labels (e.g., chase, soft wrestling,
+      solicitation) to support model training and evaluation.
+    </p>
+  </div>
+
+  <div class="feature">
+    <h3>From video → timelines → networks</h3>
+    <p>
+      Using transfer learning, I fine-tune computer vision models to detect macaque faces/bodies, link detections into tracks, identify individuals, and classify major play types—producing individual-level behavioural timelines and interaction datasets.
+    </p>
+  </div>
+</div>
+
+<ul class="bullets">
+  <li><strong>Ground-truth validation:</strong> model outputs are compared against human-annotated labels, iteratively refined, then batch-applied to remaining videos.</li>
+  <li><strong>Inference outputs:</strong> time-stamped tracklets, play events, partners, and initiation/response sequences.</li>
+  <li><strong>Analysis:</strong> mixed-effects models test how disability status, sex, and age predict play rate/type and response patterns; social network metrics quantify partner preferences and social integration.</li>
+</ul>
+
+
+      <section id="how" class="section alt">
+        <div class="container">
+          <h2>How it works</h2>
+
+          <div class="grid-3" style="margin-top:12px;">
+  <div class="feature">
+    <h3>Vision pipeline</h3>
+    <p>
+      SAM3-style segmentation + detection → tracklets under occlusion, variable lighting, and dense groups in the provisioning area.
+    </p>
+  </div>
+
+  <div class="feature">
+    <h3>Annotation + ethogram</h3>
+    <p>
+      Per-individual photo catalogues and behaviour labels (e.g., chase, soft wrestle, solicitation) stored as a consistent CSV schema.
+    </p>
+  </div>
+
+  <div class="feature">
+    <h3>Research outputs</h3>
+    <p>
+      Individual-level behavioural timelines + “who→whom” interaction events for mixed-effects models and social network metrics.
+    </p>
+  </div>
+</div>
+
+          <ol class="steps">
+  <li><strong>Collect:</strong> continuous focal-follow 4K video during a 6-week field season (juvenile macaques; disabled vs non-disabled).</li>
+  <li><strong>Curate:</strong> extract key frames + short clips; build per-individual photo catalogues; define a consistent ethogram + annotation schema.</li>
+  <li><strong>Segment & detect:</strong> apply SAM3-style segmentation and/or detectors to isolate individuals under occlusion and variable field conditions.</li>
+  <li><strong>Track & ID:</strong> link detections into tracklets and identify individuals using visual signatures (transfer learning + iterative QA).</li>
+  <li><strong>Classify play:</strong> label major play types and initiation/response patterns; validate against human ground-truth.</li>
+  <li><strong>Export & analyze:</strong> generate individual-level behavioural timelines and interaction tables for mixed-effects models and social network analyses.</li>
+</ol>
+
+<p class="caption">
+  The goal isn’t to remove human judgement—it’s to reduce the hours spent on repetitive logging so behavioural nuance can be checked, interpreted, and analyzed.
+</p>
+
+<section id="results" class="section">
+  <div class="container">
+    <h2>Progress & evaluation</h2>
+
+    <!-- Row 1: two cards side-by-side -->
+    <div class="grid-2">
+      <div class="card">
+        <h3>What I’m measuring</h3>
+        <table class="table">
+          <tr><td>Segmentation</td><td>Mask IoU, boundary quality, failure modes (occlusion/lighting)</td></tr>
+          <tr><td>Tracking</td><td>ID switches, fragmentation, tracklet continuity</td></tr>
+          <tr><td>Interaction capture</td><td>Event-level precision/recall on play bouts + timing accuracy</td></tr>
+          <tr><td>Play type labels</td><td>Fair accuracy (macro F1) across major play types + confusion patterns</td></tr>
+          <tr><td>Human time saved</td><td>Minutes annotated per minute of video (before/after)</td></tr>
+        </table>
+        <p class="caption">
+          Benchmarked against human-annotated ground truth; stratified by occlusion and group density.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What the pipeline produces</h3>
+        <ul class="bullets">
+          <li><strong>Tracklets:</strong> per-individual trajectories through short sequences</li>
+          <li><strong>Play events:</strong> candidate bouts with timestamps + partners</li>
+          <li><strong>Initiation/response:</strong> structured sequences for behavioural timelines and maps of social networks</li>
+          <li><strong>Exports:</strong> CSV tables ready for mixed-effects + network analysis</li>
+        </ul>
+        <p class="caption">
+          This is the analysis-ready layer that connects field video to behavioural inference. I'll be able to analyze if the model outlines the body's correctly, if it keeps the same individual labeled consistently across frames/time, if the system can detect when play happens (and when it doesn't), and if this actually reduces workload.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 2: full-width video -->
+    <div class="card" style="margin-top:12px;">
+      <h3>Example output</h3>
+
+     <video
+  class="demo-video"
+  controls
+  playsinline
+  preload="metadata"
+  poster="assets/example-output-poster.jpg"
+>
+  <source src="assets/example-output.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+      <p class="caption">
+        Short clip showing masks + tracklets during a play bout (with occlusions).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="aws" class="section">
+  <div class="container">
+    <h2>AWS & compute support</h2>
+
+    <div class="stack">
+      <div class="feature">
+        <h3>Where credits help most</h3>
+        <ul class="bullets">
+          <li><strong>Storage:</strong> raw 4K video + intermediate outputs (frames, masks, tracklets)</li>
+          <li><strong>Compute:</strong> GPU inference / fine-tuning for segmentation, tracking, classification</li>
+          <li><strong>Reproducibility:</strong> versioned outputs + rerunnable pipelines</li>
+          <li><strong>Collaboration:</strong> controlled access for review without duplicating huge files</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Expected workflow on AWS</h3>
+        <table class="table">
+          <tr><td>Raw data</td><td>S3 (organized + lifecycle policies)</td></tr>
+          <tr><td>Processing</td><td>GPU instances for batch inference / training</td></tr>
+          <tr><td>Outputs</td><td>Versioned masks, tracklets, event tables</td></tr>
+          <tr><td>Backups</td><td>Lifecycle to long-term archival storage</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="funders" class="section alt">
+  <div class="container">
+    <h2>Funders</h2>
+
+    <div class="logo-grid">
+      <a class="logo-card" href="https://www.mitacs.ca/?utm_term&utm_campaign=Website%20traffic-Performance%20Max-%20EN%20CAN&utm_source=adwords&utm_medium=ppc&hsa_acc=6998435487&hsa_cam=22849655508&hsa_grp&hsa_ad&hsa_src=x&hsa_tgt&hsa_kw&hsa_mt&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22849680363&gbraid=0AAAAADwDhOyN61-hjQ4ocD1RnyYc1JVMk&gclid=Cj0KCQiA5I_NBhDVARIsAOrqIsZhFvsZ8UhE-bbsTWaW48zOS69d6FsZXI3orbkkrU3cJYtFXEv4sK8aAgbcEALw_wcB" target="_blank" rel="noreferrer">
+        <img class="logo-img" src="assets/funder1.png" alt="Funder 1 logo" />
+        <div class="logo-name">Mitacs Globalink</div>
+      </a>
+
+      <a class="logo-card" href="https://sustainabilitydigitalage.org/leads/" target="_blank" rel="noreferrer">
+        <img class="logo-img" src="assets/funder2.png" alt="Funder 2 logo" />
+        <div class="logo-name">LEADS</div>
+      </a>
+
+      <a class="logo-card" href="https://qcbs.ca" target="_blank" rel="noreferrer">
+        <img class="logo-img" src="assets/funder3.png" alt="Funder 3 logo" />
+        <div class="logo-name">QCBS</div>
+      </a>
+    </div>
+
+ 
+</section>
+
+<section id="links" class="section alt">
+  <div class="container">
+    <h2>Links</h2>
+
+ <div class="links-buttons">
+  <a class="btn-link" href="#" target="_blank" rel="noopener noreferrer">Demo</a>
+  <a class="btn-link" href="#" target="_blank" rel="noopener noreferrer">Repository</a>
+  <a class="btn-link" href="#" target="_blank" rel="noopener noreferrer">Docs / Schema</a>
+  <a class="btn-link" href="mailto:beyondtheblink.project@gmail.com">Contact</a>
+</div>
+
+    <p class="caption" style="margin-top:10px;">
+      Demo, codes for reproducible pipeline, ethograms, and workflows coming soon.
+    </p>
+  </div>
+</section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© <span id="year"></span> Cristina Sciortino • Beyond the Blink of an Eye</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
