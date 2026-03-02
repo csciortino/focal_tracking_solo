@@ -1,12 +1,12 @@
 # Macaque Individual Tracking System
 
-A comprehensive video analysis pipeline for identifying and tracking individual macaques in camera trap footage.
+A comprehensive video analysis pipeline for identifying and tracking individual macaques in 4k video footage.
 
 ## Overview
 
 This system uses computer vision and machine learning to:
 
-1. **Detect** primates in camera trap videos using YOLO object detection
+1. **Detect** macaques in camera trap videos using pre-trained model object detection
 2. **Track** individuals across frames using motion-based tracking
 3. **Extract features** from detected animals for identification
 4. **Cluster** tracklets to propose individual identities using HDBSCAN
@@ -18,7 +18,7 @@ This system uses computer vision and machine learning to:
 focal_tracking/
 ├── data/raw/                    # Camera trap videos
 ├── src/macaque_tracker/         # Core tracking modules
-│   ├── detector.py             # YOLO-based detection
+│   ├── detector.py             # model-based detection
 │   ├── tracker.py              # Simple tracking algorithm
 │   ├── clustering.py           # Individual identification
 │   └── video_utils.py          # Video processing utilities
